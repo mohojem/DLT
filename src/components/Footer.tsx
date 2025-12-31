@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/dtl-logo.png";
 
@@ -10,11 +11,13 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <img
-              src={logo}
-              alt="DTL Law"
-              className="h-16 w-auto mb-4 brightness-0 invert"
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt="DTL Law"
+                className="h-16 w-auto mb-4 brightness-0 invert"
+              />
+            </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Du Toit Lambrechts Inc. is a trusted South African law firm
               providing professional legal services across multiple practice
@@ -29,20 +32,30 @@ const Footer = () => {
             </h4>
             <nav className="space-y-2">
               {[
-                { label: "Home", href: "#home" },
-                { label: "About", href: "#about" },
-                { label: "Practice Areas", href: "#practice-areas" },
-                { label: "Our Team", href: "#team" },
-                { label: "Contact", href: "#contact" },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="block text-sm text-primary-foreground/70 hover:text-gold transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+                { label: "Home", href: "/" },
+                { label: "About", href: "/#about" },
+                { label: "Practice Areas", href: "/practice-areas" },
+                { label: "Our Team", href: "/#team" },
+                { label: "Contact", href: "/#contact" },
+              ].map((link) =>
+                link.href.startsWith("/practice") ? (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="block text-sm text-primary-foreground/70 hover:text-gold transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="block text-sm text-primary-foreground/70 hover:text-gold transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </nav>
           </div>
 
@@ -53,19 +66,19 @@ const Footer = () => {
             </h4>
             <nav className="space-y-2">
               {[
-                "Commercial Law",
-                "Litigation",
-                "Property & Conveyancing",
-                "Family Law",
-                "Estates & Wills",
+                { label: "Commercial Law", id: "commercial-law" },
+                { label: "Litigation", id: "litigation" },
+                { label: "Property & Conveyancing", id: "property-conveyancing" },
+                { label: "Family Law", id: "family-law" },
+                { label: "Estates & Wills", id: "estates-wills-trusts" },
               ].map((area) => (
-                <a
-                  key={area}
-                  href="#practice-areas"
+                <Link
+                  key={area.label}
+                  to={`/practice-areas#${area.id}`}
                   className="block text-sm text-primary-foreground/70 hover:text-gold transition-colors"
                 >
-                  {area}
-                </a>
+                  {area.label}
+                </Link>
               ))}
             </nav>
           </div>
@@ -117,7 +130,7 @@ const Footer = () => {
               <a href="#" className="hover:text-gold transition-colors">
                 Legal Disclaimer
               </a>
-              <a href="#faq" className="hover:text-gold transition-colors">
+              <a href="/#faq" className="hover:text-gold transition-colors">
                 FAQs
               </a>
             </div>
