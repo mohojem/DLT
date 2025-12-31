@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center pt-20 bg-primary"
-    >
+  return <section id="home" className="relative min-h-screen flex items-center pt-20 bg-primary">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,hsl(var(--gold)/0.1)_25%,hsl(var(--gold)/0.1)_50%,transparent_50%,transparent_75%,hsl(var(--gold)/0.1)_75%)] bg-[length:60px_60px]" />
@@ -49,28 +44,12 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16 pt-8 border-t border-primary-foreground/20 animate-fade-in [animation-delay:400ms]">
-            <p className="text-sm text-primary-foreground/60 mb-4">
-              Offices in
-            </p>
-            <div className="flex flex-wrap gap-6">
-              {["Bloemfontein", "Mossel Bay", "Cape Town"].map((city) => (
-                <div key={city} className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-gold" />
-                  <span className="text-primary-foreground font-medium">
-                    {city}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </div>
 
       {/* Decorative Element */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
