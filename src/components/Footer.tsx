@@ -15,7 +15,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="DTL Law"
-                className="h-24 w-auto mb-4 brightness-0 invert"
+                className="h-24 w-auto mb-4"
               />
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
