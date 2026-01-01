@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-background text-foreground border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
@@ -18,7 +18,7 @@ const Footer = () => {
                 className="h-24 w-auto mb-4"
               />
             </Link>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Du Toit Lambrechts Inc. is a trusted South African law firm
               providing professional legal services across multiple practice
               areas.
@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-4 text-gold">
+            <h4 className="font-serif font-semibold text-lg mb-4 text-foreground">
               Quick Links
             </h4>
             <nav className="space-y-2">
@@ -42,7 +42,7 @@ const Footer = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="block text-sm text-primary-foreground/70 hover:text-gold transition-colors"
+                    className="block text-sm text-muted-foreground hover:text-accent transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="block text-sm text-primary-foreground/70 hover:text-gold transition-colors"
+                    className="block text-sm text-muted-foreground hover:text-accent transition-colors"
                   >
                     {link.label}
                   </a>
@@ -61,7 +61,7 @@ const Footer = () => {
 
           {/* Practice Areas */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-4 text-gold">
+            <h4 className="font-serif font-semibold text-lg mb-4 text-foreground">
               Practice Areas
             </h4>
             <nav className="space-y-2">
@@ -75,7 +75,7 @@ const Footer = () => {
                 <Link
                   key={area.label}
                   to={`/practice-areas#${area.id}`}
-                  className="block text-sm text-primary-foreground/70 hover:text-gold transition-colors"
+                  className="block text-sm text-muted-foreground hover:text-accent transition-colors"
                 >
                   {area.label}
                 </Link>
@@ -85,30 +85,30 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif font-semibold text-lg mb-4 text-gold">
+            <h4 className="font-serif font-semibold text-lg mb-4 text-foreground">
               Contact
             </h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/70">
+                <MapPin className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">
                   15 Wilcocks Road, Noordhoek, Bloemfontein
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-gold flex-shrink-0" />
+                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
                 <a
                   href="tel:0514331415"
-                  className="text-primary-foreground/70 hover:text-gold transition-colors"
+                  className="text-muted-foreground hover:text-accent transition-colors"
                 >
                   051 433 1415
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-gold flex-shrink-0" />
+                <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                 <a
                   href="mailto:infobfn@dtllaw.co.za"
-                  className="text-primary-foreground/70 hover:text-gold transition-colors"
+                  className="text-muted-foreground hover:text-accent transition-colors"
                 >
                   infobfn@dtllaw.co.za
                 </a>
@@ -118,19 +118,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
+        <div className="mt-12 pt-8 border-t border-border">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>
               © {currentYear} Du Toit Lambrechts Inc. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-gold transition-colors">
+              <a href="#" className="hover:text-accent transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-gold transition-colors">
+              <a href="#" className="hover:text-accent transition-colors">
                 Legal Disclaimer
               </a>
-              <a href="/#faq" className="hover:text-gold transition-colors">
+              <a href="/#faq" className="hover:text-accent transition-colors">
                 FAQs
               </a>
             </div>

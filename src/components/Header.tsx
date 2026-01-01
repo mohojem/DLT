@@ -54,7 +54,7 @@ const Header = () => {
             <img
               src={logo}
               alt="DTL Law - Du Toit Lambrechts Inc."
-              className="h-14 w-auto"
+              className="h-24 w-auto"
             />
           </Link>
 
